@@ -80,7 +80,6 @@ extension TopRatedViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        print("topMovies count:", topMovies.count)
         return topMovies.count
     }
     

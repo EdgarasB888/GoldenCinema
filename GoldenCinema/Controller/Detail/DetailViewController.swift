@@ -42,16 +42,17 @@ class DetailViewController: UIViewController
         newItem.movieDescription = descriptionText
         newItem.imageUrl = imageToSaveUrl
         newItem.voteAverage = voteAverageText
-        CoreDataManager.savedMovies.append(newItem)
-        
+    
         if(popularityText == "")
         {
-            newItem.category = "Top"
+            newItem.category = "Top Rated"
         }
         else
         {
             newItem.category = "Trending"
         }
+        
+        CoreDataManager.savedMovies.append(newItem)
         
         print("Saved movies count: ",CoreDataManager.savedMovies.count)
         

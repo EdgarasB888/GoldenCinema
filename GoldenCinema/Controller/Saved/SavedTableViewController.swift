@@ -9,14 +9,19 @@ import UIKit
 import CoreData
 import SDWebImage
 
-class SavedTableViewController: UITableViewController
+class SavedTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate
 {
+    let searchController = UISearchController()
+    
     var savedMovies = [MovieItem]()
+    var filteredMovies = [MovieItem]()
+    
     var managedObjectContext: NSManagedObjectContext?
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        initSearchController()
 
         title = "Saved"
         
@@ -28,6 +33,8 @@ class SavedTableViewController: UITableViewController
         CoreDataManager.managedObjectContext = appDelegate.persistentContainer.viewContext
         
         CoreDataManager.loadData()
+        
+        setupBarButtonMenu()
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -38,10 +45,92 @@ class SavedTableViewController: UITableViewController
         tableView.reloadData()
     }
     
-    
-    @IBAction func filterItemsTapped(_ sender: Any)
+    func setupBarButtonMenu()
     {
+        let barButtonMenu = UIMenu(title: "Sort by: ", children: [
+            UIAction(title: NSLocalizedString("Title Ascending", comment: ""), image: UIImage(systemName: "textformat.abc"), handler: { action in
+                self.savedMovies.sort {
+                    $0.title ?? "" < $1.title ?? ""
+                }
+                self.tableView.reloadData()
+            }),
+            UIAction(title: NSLocalizedString("Title Descending", comment: ""), image: UIImage(systemName: "textformat.abc"), handler: { action in
+                self.savedMovies.sort {
+                    $0.title ?? "" > $1.title ?? ""
+                }
+                self.tableView.reloadData()
+            }),
+            UIAction(title: NSLocalizedString("Release Date Ascending", comment: ""), image: UIImage(systemName: "calendar"), handler: { action in
+                self.savedMovies.sort {
+                    $0.releaseDate ?? "" < $1.releaseDate ?? ""
+                }
+                self.tableView.reloadData()
+            }),
+            UIAction(title: NSLocalizedString("Release Date Descending", comment: ""), image: UIImage(systemName: "calendar"), handler: { action in
+                self.savedMovies.sort {
+                    $0.releaseDate ?? "" > $1.releaseDate ?? ""
+                }
+                self.tableView.reloadData()
+            }),
+            UIAction(title: NSLocalizedString("Vote Average Ascending", comment: ""), image: UIImage(systemName: "checkmark.rectangle.portrait"), handler: { action in
+                self.savedMovies.sort {
+                    $0.voteAverage ?? "" < $1.voteAverage ?? ""
+                }
+                self.tableView.reloadData()
+            }),
+            UIAction(title: NSLocalizedString("Vote Average Descending", comment: ""), image: UIImage(systemName: "checkmark.rectangle.portrait"), handler: { action in
+                self.savedMovies.sort {
+                    $0.voteAverage ?? "" > $1.voteAverage ?? ""
+                }
+                self.tableView.reloadData()
+            })
+        ])
         
+        navigationItem.rightBarButtonItem?.menu = barButtonMenu
+    }
+    
+    func initSearchController()
+    {
+        searchController.loadViewIfNeeded()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.searchBar.returnKeyType = UIReturnKeyType.done
+        definesPresentationContext = true
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.scopeButtonTitles = ["All", "Top Rated", "Trending"]
+        searchController.searchBar.delegate = self
+    }
+    
+    func updateSearchResults(for searchController: UISearchController)
+    {
+        let searchBar = searchController.searchBar
+        let scopeButton = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        let searchText = searchBar.text!
+        
+        filterForSearchTextAndScopeButton(searchText: searchText, scopeButton: scopeButton)
+    }
+    
+    func filterForSearchTextAndScopeButton(searchText: String, scopeButton: String = "All")
+    {
+        filteredMovies = savedMovies.filter
+        {
+            movie in
+            let scopeMatch = (scopeButton == "All" || ((movie.category!.lowercased().contains(scopeButton.lowercased()))))
+            if (searchController.searchBar.text != "")
+            {
+                let searchTextMatch = movie.title!.lowercased().contains(searchText.lowercased())
+
+                return scopeMatch && searchTextMatch
+            }
+            else
+            {
+                return scopeMatch
+            }
+        }
+        tableView.reloadData()
     }
     
     @IBAction func deleteAllSavedItems(_ sender: Any)
@@ -64,7 +153,10 @@ class SavedTableViewController: UITableViewController
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        //prideti placeholderi
+        if(searchController.isActive)
+        {
+            return filteredMovies.count
+        }
         return savedMovies.count
     }
     
@@ -77,7 +169,16 @@ class SavedTableViewController: UITableViewController
     {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SavedTableViewCell", for: indexPath) as? SavedTableViewCell else {return UITableViewCell()}
         
-        let item = savedMovies[indexPath.row]
+        let item: MovieItem!
+        
+        if(searchController.isActive)
+        {
+            item = filteredMovies[indexPath.row]
+        }
+        else
+        {
+            item = savedMovies[indexPath.row]
+        }
         
         cell.categoryLabel.text = "Category: " + (item.category ?? "")
         cell.titleLabel.text = item.title
