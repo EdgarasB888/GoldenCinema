@@ -7,25 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882AE69528C5EF68005CEAD8 /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882AE69428C5EF68005CEAD8 /* TrendingTableViewCell.swift */; };
+		882AE69728C60817005CEAD8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882AE69628C60817005CEAD8 /* DetailViewController.swift */; };
+		882AE69928C61006005CEAD8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882AE69828C61006005CEAD8 /* CoreDataManager.swift */; };
+		882BF6FF28C2346C00D772F1 /* TopRatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882BF6FE28C2346C00D772F1 /* TopRatedViewController.swift */; };
+		882BF70128C2367800D772F1 /* TopRatedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882BF70028C2367800D772F1 /* TopRatedTableViewCell.swift */; };
 		8840337928C124CF007FDB4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8840337828C124CF007FDB4E /* AppDelegate.swift */; };
 		8840337B28C124CF007FDB4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8840337A28C124CF007FDB4E /* SceneDelegate.swift */; };
-		8840337D28C124CF007FDB4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8840337C28C124CF007FDB4E /* ViewController.swift */; };
 		8840338028C124CF007FDB4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8840337E28C124CF007FDB4E /* Main.storyboard */; };
 		8840338328C124CF007FDB4E /* GoldenCinema.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8840338128C124CF007FDB4E /* GoldenCinema.xcdatamodeld */; };
 		8840338528C124D4007FDB4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8840338428C124D4007FDB4E /* Assets.xcassets */; };
 		8840338828C124D4007FDB4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8840338628C124D4007FDB4E /* LaunchScreen.storyboard */; };
+		8840339428C12996007FDB4E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8840339328C12996007FDB4E /* NetworkManager.swift */; };
+		8840339628C12C30007FDB4E /* TopMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8840339528C12C30007FDB4E /* TopMovie.swift */; };
+		884CC56328C8A1BC008E33B6 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884CC56228C8A1BC008E33B6 /* SavedTableViewCell.swift */; };
+		8851D53B28C7AF7400D32A39 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8851D53A28C7AF7400D32A39 /* WebViewController.swift */; };
+		8855BFF528C4FD3800C86872 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855BFF428C4FD3800C86872 /* TrendingViewController.swift */; };
+		8855BFF828C505C600C86872 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8855BFF728C505C600C86872 /* SDWebImage */; };
+		8855BFFE28C50C9E00C86872 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855BFFD28C50C9E00C86872 /* SearchViewController.swift */; };
+		8855C00028C50E7400C86872 /* TrendingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855BFFF28C50E7400C86872 /* TrendingMovie.swift */; };
+		888C34CD28CA280A00E5626B /* SavedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888C34CC28CA280A00E5626B /* SavedTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		882AE69428C5EF68005CEAD8 /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
+		882AE69628C60817005CEAD8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		882AE69828C61006005CEAD8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010CoreDataManager.swift"; sourceTree = "<group>"; };
+		882BF6FE28C2346C00D772F1 /* TopRatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedViewController.swift; sourceTree = "<group>"; };
+		882BF70028C2367800D772F1 /* TopRatedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedTableViewCell.swift; sourceTree = "<group>"; };
 		8840337528C124CF007FDB4E /* GoldenCinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenCinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8840337828C124CF007FDB4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8840337A28C124CF007FDB4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8840337C28C124CF007FDB4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8840337F28C124CF007FDB4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8840338228C124CF007FDB4E /* GoldenCinema.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoldenCinema.xcdatamodel; sourceTree = "<group>"; };
 		8840338428C124D4007FDB4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8840338728C124D4007FDB4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8840338928C124D4007FDB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8840339328C12996007FDB4E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8840339528C12C30007FDB4E /* TopMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMovie.swift; sourceTree = "<group>"; };
+		884CC56228C8A1BC008E33B6 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
+		8851D53A28C7AF7400D32A39 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		8855BFF428C4FD3800C86872 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
+		8855BFFD28C50C9E00C86872 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8855BFFF28C50E7400C86872 /* TrendingMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMovie.swift; sourceTree = "<group>"; };
+		888C34CC28CA280A00E5626B /* SavedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8855BFF828C505C600C86872 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +84,116 @@
 		8840337728C124CF007FDB4E /* GoldenCinema */ = {
 			isa = PBXGroup;
 			children = (
-				8840337828C124CF007FDB4E /* AppDelegate.swift */,
-				8840337A28C124CF007FDB4E /* SceneDelegate.swift */,
-				8840337C28C124CF007FDB4E /* ViewController.swift */,
-				8840337E28C124CF007FDB4E /* Main.storyboard */,
+				8840339228C1296E007FDB4E /* Helpers */,
+				8840338F28C1259A007FDB4E /* Delegates */,
+				8840339728C12C39007FDB4E /* Model */,
+				8840339028C125AB007FDB4E /* View */,
+				8840339128C125B9007FDB4E /* Controller */,
 				8840338428C124D4007FDB4E /* Assets.xcassets */,
-				8840338628C124D4007FDB4E /* LaunchScreen.storyboard */,
 				8840338928C124D4007FDB4E /* Info.plist */,
 				8840338128C124CF007FDB4E /* GoldenCinema.xcdatamodeld */,
 			);
 			path = GoldenCinema;
+			sourceTree = "<group>";
+		};
+		8840338F28C1259A007FDB4E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8840337828C124CF007FDB4E /* AppDelegate.swift */,
+				8840337A28C124CF007FDB4E /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		8840339028C125AB007FDB4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8840337E28C124CF007FDB4E /* Main.storyboard */,
+				8840338628C124D4007FDB4E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8840339128C125B9007FDB4E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				888C34CE28CA281800E5626B /* TopRated */,
+				888C34CF28CA284000E5626B /* Trending */,
+				888C34D128CA286200E5626B /* Detail */,
+				888C34D328CA31C700E5626B /* Search */,
+				888C34D228CA2B5800E5626B /* Saved */,
+				888C34D028CA285100E5626B /* Web */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8840339228C1296E007FDB4E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8840339328C12996007FDB4E /* NetworkManager.swift */,
+				882AE69828C61006005CEAD8 /* CoreDataManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8840339728C12C39007FDB4E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8840339528C12C30007FDB4E /* TopMovie.swift */,
+				8855BFFF28C50E7400C86872 /* TrendingMovie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		888C34CE28CA281800E5626B /* TopRated */ = {
+			isa = PBXGroup;
+			children = (
+				882BF6FE28C2346C00D772F1 /* TopRatedViewController.swift */,
+				882BF70028C2367800D772F1 /* TopRatedTableViewCell.swift */,
+			);
+			path = TopRated;
+			sourceTree = "<group>";
+		};
+		888C34CF28CA284000E5626B /* Trending */ = {
+			isa = PBXGroup;
+			children = (
+				8855BFF428C4FD3800C86872 /* TrendingViewController.swift */,
+				882AE69428C5EF68005CEAD8 /* TrendingTableViewCell.swift */,
+			);
+			path = Trending;
+			sourceTree = "<group>";
+		};
+		888C34D028CA285100E5626B /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				8851D53A28C7AF7400D32A39 /* WebViewController.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		888C34D128CA286200E5626B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				882AE69628C60817005CEAD8 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		888C34D228CA2B5800E5626B /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				884CC56228C8A1BC008E33B6 /* SavedTableViewCell.swift */,
+				888C34CC28CA280A00E5626B /* SavedTableViewController.swift */,
+			);
+			path = Saved;
+			sourceTree = "<group>";
+		};
+		888C34D328CA31C700E5626B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8855BFFD28C50C9E00C86872 /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +212,9 @@
 			dependencies = (
 			);
 			name = GoldenCinema;
+			packageProductDependencies = (
+				8855BFF728C505C600C86872 /* SDWebImage */,
+			);
 			productName = GoldenCinema;
 			productReference = 8840337528C124CF007FDB4E /* GoldenCinema.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +243,9 @@
 				Base,
 			);
 			mainGroup = 8840336C28C124CF007FDB4E;
+			packageReferences = (
+				8855BFF628C505C600C86872 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 8840337628C124CF007FDB4E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,10 +273,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8840337D28C124CF007FDB4E /* ViewController.swift in Sources */,
+				882AE69728C60817005CEAD8 /* DetailViewController.swift in Sources */,
 				8840337928C124CF007FDB4E /* AppDelegate.swift in Sources */,
+				8855BFFE28C50C9E00C86872 /* SearchViewController.swift in Sources */,
+				8855BFF528C4FD3800C86872 /* TrendingViewController.swift in Sources */,
+				8840339628C12C30007FDB4E /* TopMovie.swift in Sources */,
+				8840339428C12996007FDB4E /* NetworkManager.swift in Sources */,
 				8840337B28C124CF007FDB4E /* SceneDelegate.swift in Sources */,
 				8840338328C124CF007FDB4E /* GoldenCinema.xcdatamodeld in Sources */,
+				888C34CD28CA280A00E5626B /* SavedTableViewController.swift in Sources */,
+				882BF70128C2367800D772F1 /* TopRatedTableViewCell.swift in Sources */,
+				884CC56328C8A1BC008E33B6 /* SavedTableViewCell.swift in Sources */,
+				8855C00028C50E7400C86872 /* TrendingMovie.swift in Sources */,
+				882AE69928C61006005CEAD8 /* CoreDataManager.swift in Sources */,
+				882BF6FF28C2346C00D772F1 /* TopRatedViewController.swift in Sources */,
+				8851D53B28C7AF7400D32A39 /* WebViewController.swift in Sources */,
+				882AE69528C5EF68005CEAD8 /* TrendingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +504,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8855BFF628C505C600C86872 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8855BFF728C505C600C86872 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8855BFF628C505C600C86872 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8840338128C124CF007FDB4E /* GoldenCinema.xcdatamodeld */ = {
