@@ -8,11 +8,20 @@
 import UIKit
 import SDWebImage
 
-class TrendingViewController: UIViewController
+enum selectedScope: Int
+{
+    case title = 0
+    case releaseDate = 1
+    case popularity = 2
+    case voteAverage = 3
+}
+ 
+class TrendingViewController: UIViewController, UISearchBarDelegate
 {
     @IBOutlet weak var tableView: UITableView!
     
     var trendingMovies: [TrendingMovieInfo] = []
+    var filteredTrendingMovies: [TrendingMovieInfo] = []
     
     override func viewDidLoad()
     {
@@ -22,12 +31,14 @@ class TrendingViewController: UIViewController
         
         NetworkManager.fetchTrendingMoviesData { trendingMovies in
             self.trendingMovies = trendingMovies
+            self.filteredTrendingMovies = trendingMovies
             DispatchQueue.main.async
             {
                 self.tableView.reloadData()
             }
         }
         
+        setupSearchBar()
         setupBarButtonMenu()
     }
     
@@ -87,7 +98,76 @@ class TrendingViewController: UIViewController
         navigationItem.rightBarButtonItem?.menu = barButtonMenu
     }
     
-    /*
+    func setupSearchBar()
+    {
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width:(UIScreen.main.bounds.width), height: 70))
+        
+        searchBar.showsScopeBar = true
+        searchBar.scopeButtonTitles = ["Title", "Release Date", "Popularity", "Vote Average"]
+        searchBar.selectedScopeButtonIndex = 0
+        
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        searchBar.delegate = self
+        self.tableView.tableHeaderView = searchBar
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        if searchText.isEmpty
+        {
+            NetworkManager.fetchTrendingMoviesData { trendingMovies in
+                self.filteredTrendingMovies = trendingMovies
+                DispatchQueue.main.async
+                {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        else
+        {
+            filterTableView(ind: searchBar.selectedScopeButtonIndex, text: searchText)
+        }
+    }
+    
+    func filterTableView(ind: Int, text: String)
+    {
+        switch ind
+        {
+            case selectedScope.title.rawValue:
+                filteredTrendingMovies = trendingMovies.filter(
+                    {
+                        (movie) -> Bool
+                        in return movie.title?.lowercased().contains(text.lowercased()) ?? true
+                    })
+                self.tableView.reloadData()
+            case selectedScope.releaseDate.rawValue:
+                filteredTrendingMovies = trendingMovies.filter(
+                    {
+                        (movie) -> Bool
+                        in return movie.releaseDate?.lowercased().contains(text.lowercased()) ?? true
+                    })
+                self.tableView.reloadData()
+            case selectedScope.popularity.rawValue:
+                filteredTrendingMovies = trendingMovies.filter(
+                    {
+                        (movie) -> Bool
+                        in return "\(movie.popularity ?? 0.0)" == text
+                    })
+                self.tableView.reloadData()
+            case selectedScope.voteAverage.rawValue:
+                filteredTrendingMovies = trendingMovies.filter(
+                    {
+                        (movie) -> Bool
+                        in return "\(movie.voteAverage ?? 0.0)" == text
+                    })
+                self.tableView.reloadData()
+            default:
+                print("No type!")
+        }
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -95,7 +175,7 @@ class TrendingViewController: UIViewController
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
 
@@ -103,7 +183,8 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return trendingMovies.count
+        //return trendingMovies.count
+        return filteredTrendingMovies.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
@@ -112,8 +193,9 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource
         
         guard let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {return}
         
-        let item = trendingMovies[indexPath.row]
-        
+        let item: TrendingMovieInfo!
+        item = trendingMovies[indexPath.row]
+    
         vc.descriptionText = item.overview
         vc.titleText = item.title
         vc.releaseDateText = item.releaseDate
@@ -134,7 +216,8 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource
     {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingTableViewCell", for: indexPath) as? TrendingTableViewCell else {return UITableViewCell()}
         
-        let item = trendingMovies[indexPath.row]
+       // let item = trendingMovies[indexPath.row]
+        let item = filteredTrendingMovies[indexPath.row]
         
         cell.trendingTitleLabel.text = item.originalTitle
         cell.trendingReleaseDateLabel.text = "Released: " + (item.releaseDate ?? "")

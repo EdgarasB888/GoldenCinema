@@ -21,7 +21,7 @@ class SavedTableViewController: UITableViewController, UISearchResultsUpdating, 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        initSearchController()
+        
 
         title = "Saved"
         
@@ -34,6 +34,7 @@ class SavedTableViewController: UITableViewController, UISearchResultsUpdating, 
         
         CoreDataManager.loadData()
         
+        initSearchController()
         setupBarButtonMenu()
     }
     

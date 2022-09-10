@@ -8,11 +8,19 @@
 import UIKit
 import SDWebImage
 
-class TopRatedViewController: UIViewController
+enum selectedScopeTopRated: Int
+{
+    case title = 0
+    case releaseDate = 1
+    case voteAverage = 2
+}
+
+class TopRatedViewController: UIViewController, UISearchBarDelegate
 {
     @IBOutlet weak var tableView: UITableView!
     
     var topMovies: [TopMovieInfo] = []
+    var filteredTopMovies = [TopMovieInfo]()
     
     override func viewDidLoad()
     {
@@ -22,12 +30,14 @@ class TopRatedViewController: UIViewController
         
         NetworkManager.fetchTopMoviesData { topMovies in
             self.topMovies = topMovies
+            self.filteredTopMovies = topMovies
             DispatchQueue.main.async
             {
                 self.tableView.reloadData()
             }
         }
         
+        setupSearchBar()
         setupBarButtonMenu()
     }
     
@@ -74,13 +84,76 @@ class TopRatedViewController: UIViewController
         
         navigationItem.rightBarButtonItem?.menu = barButtonMenu
     }
+    
+    func setupSearchBar()
+    {
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width:(UIScreen.main.bounds.width), height: 70))
+        
+        searchBar.showsScopeBar = true
+        searchBar.scopeButtonTitles = ["Title", "Release Date", "Vote Average"]
+        searchBar.selectedScopeButtonIndex = 0
+        
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        searchBar.delegate = self
+        self.tableView.tableHeaderView = searchBar
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        if searchText.isEmpty
+        {
+            NetworkManager.fetchTopMoviesData { topMovies in
+                self.filteredTopMovies = topMovies
+                DispatchQueue.main.async
+                {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        else
+        {
+            filterTableView(ind: searchBar.selectedScopeButtonIndex, text: searchText)
+        }
+    }
+    
+    func filterTableView(ind: Int, text: String)
+    {
+        switch ind
+        {
+            case selectedScopeTopRated.title.rawValue:
+                filteredTopMovies = topMovies.filter(
+                    {
+                        (movie) -> Bool
+                        in return movie.title?.lowercased().contains(text.lowercased()) ?? true
+                    })
+                self.tableView.reloadData()
+            case selectedScopeTopRated.releaseDate.rawValue:
+                filteredTopMovies = topMovies.filter(
+                    {
+                        (movie) -> Bool
+                        in return movie.releaseDate?.lowercased().contains(text.lowercased()) ?? true
+                    })
+                self.tableView.reloadData()
+            case selectedScopeTopRated.voteAverage.rawValue:
+                filteredTopMovies = topMovies.filter(
+                    {
+                        (movie) -> Bool
+                        in return "\(movie.voteAverage ?? 0.0)" == text
+                    })
+                self.tableView.reloadData()
+            default:
+                print("No type!")
+        }
+    }
 }
 
 extension TopRatedViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return topMovies.count
+        //return topMovies.count
+        return filteredTopMovies.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -94,7 +167,8 @@ extension TopRatedViewController: UITableViewDelegate, UITableViewDataSource
         
         guard let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {return}
         
-        let item = topMovies[indexPath.row]
+        let item: TopMovieInfo!
+        item = topMovies[indexPath.row]
         
         vc.descriptionText = item.overview
         vc.titleText = item.title
@@ -110,7 +184,7 @@ extension TopRatedViewController: UITableViewDelegate, UITableViewDataSource
     {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TopRatedTableViewCell", for: indexPath) as? TopRatedTableViewCell else {return UITableViewCell()}
         
-        let item = topMovies[indexPath.row]
+        let item = filteredTopMovies[indexPath.row]
         
         cell.titleLabel.text = item.originalTitle
         cell.releaseDateLabel.text = "Released: " + (item.releaseDate ?? "")
