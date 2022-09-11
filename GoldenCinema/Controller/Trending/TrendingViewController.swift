@@ -46,49 +46,49 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
     {
         let barButtonMenu = UIMenu(title: "Sort by: ", children: [
             UIAction(title: NSLocalizedString("Title Ascending", comment: ""), image: UIImage(systemName: "textformat.abc"), handler: { action in
-                self.trendingMovies.sort {
+                self.filteredTrendingMovies.sort {
                     $0.title ?? "" < $1.title ?? ""
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Title Descending", comment: ""), image: UIImage(systemName: "textformat.abc"), handler: { action in
-                self.trendingMovies.sort {
+                self.filteredTrendingMovies.sort {
                     $0.title ?? "" > $1.title ?? ""
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Release Date Ascending", comment: ""), image: UIImage(systemName: "calendar"), handler: { action in
-                self.trendingMovies.sort {
+                self.filteredTrendingMovies.sort {
                     $0.releaseDate ?? "" < $1.releaseDate ?? ""
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Release Date Descending", comment: ""), image: UIImage(systemName: "calendar"), handler: { action in
-                self.trendingMovies.sort {
+                self.filteredTrendingMovies.sort {
                     $0.releaseDate ?? "" > $1.releaseDate ?? ""
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Popularity Ascending", comment: ""), image: UIImage(systemName: "chart.line.uptrend.xyaxis"), handler: { action in
-                self.trendingMovies.sort {
+                self.filteredTrendingMovies.sort {
                     $0.popularity ?? 0.0 < $1.popularity ?? 0.0
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Popularity Descending", comment: ""), image: UIImage(systemName: "chart.line.uptrend.xyaxis"), handler: { action in
-                self.trendingMovies.sort {
+                self.filteredTrendingMovies.sort {
                     $0.popularity ?? 0.0 > $1.popularity ?? 0.0
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Vote Average Ascending", comment: ""), image: UIImage(systemName: "checkmark.rectangle.portrait"), handler: { action in
-                self.trendingMovies.sort {
+                self.filteredTrendingMovies.sort {
                     $0.voteAverage ?? 0.0 < $1.voteAverage ?? 0.0
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Vote Average Descending", comment: ""), image: UIImage(systemName: "checkmark.rectangle.portrait"), handler: { action in
-                self.trendingMovies.sort {
+                self.filteredTrendingMovies.sort {
                     $0.voteAverage ?? 0.0 > $1.voteAverage ?? 0.0
                 }
                 self.tableView.reloadData()
@@ -169,14 +169,16 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
     
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else {return}
+        
+        vc.trendingMovies = trendingMovies
     }
-    
-
+     */
 }
 
 extension TrendingViewController: UITableViewDelegate, UITableViewDataSource

@@ -21,8 +21,7 @@ class SavedTableViewController: UITableViewController, UISearchResultsUpdating, 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-
+    
         title = "Saved"
         
         tableView.dragInteractionEnabled = true

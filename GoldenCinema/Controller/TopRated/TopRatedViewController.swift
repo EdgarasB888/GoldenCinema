@@ -45,37 +45,37 @@ class TopRatedViewController: UIViewController, UISearchBarDelegate
     {
         let barButtonMenu = UIMenu(title: "Sort by: ", children: [
             UIAction(title: NSLocalizedString("Title Ascending", comment: ""), image: UIImage(systemName: "textformat.abc"), handler: { action in
-                self.topMovies.sort {
+                self.filteredTopMovies.sort {
                     $0.title ?? "" < $1.title ?? ""
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Title Descending", comment: ""), image: UIImage(systemName: "textformat.abc"), handler: { action in
-                self.topMovies.sort {
+                self.filteredTopMovies.sort {
                     $0.title ?? "" > $1.title ?? ""
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Release Date Ascending", comment: ""), image: UIImage(systemName: "calendar"), handler: { action in
-                self.topMovies.sort {
+                self.filteredTopMovies.sort {
                     $0.releaseDate ?? "" < $1.releaseDate ?? ""
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Release Date Descending", comment: ""), image: UIImage(systemName: "calendar"), handler: { action in
-                self.topMovies.sort {
+                self.filteredTopMovies.sort {
                     $0.releaseDate ?? "" > $1.releaseDate ?? ""
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Vote Average Ascending", comment: ""), image: UIImage(systemName: "checkmark.rectangle.portrait"), handler: { action in
-                self.topMovies.sort {
+                self.filteredTopMovies.sort {
                     $0.voteAverage ?? 0.0 < $1.voteAverage ?? 0.0
                 }
                 self.tableView.reloadData()
             }),
             UIAction(title: NSLocalizedString("Vote Average Descending", comment: ""), image: UIImage(systemName: "checkmark.rectangle.portrait"), handler: { action in
-                self.topMovies.sort {
+                self.filteredTopMovies.sort {
                     $0.voteAverage ?? 0.0 > $1.voteAverage ?? 0.0
                 }
                 self.tableView.reloadData()
@@ -146,6 +146,17 @@ class TopRatedViewController: UIViewController, UISearchBarDelegate
                 print("No type!")
         }
     }
+    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else {return}
+        
+        vc.topMovies = topMovies
+    }
+     */
 }
 
 extension TopRatedViewController: UITableViewDelegate, UITableViewDataSource
