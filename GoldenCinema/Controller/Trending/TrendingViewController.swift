@@ -232,7 +232,7 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource
        // let item = trendingMovies[indexPath.row]
         let item = filteredTrendingMovies[indexPath.row]
         
-        cell.trendingTitleLabel.text = item.originalTitle
+        cell.trendingTitleLabel.text = item.title
         cell.trendingReleaseDateLabel.text = "Released: " + (item.releaseDate ?? "")
         cell.trendingPopularityLabel.text = "Popularity: " + "\(item.popularity ?? 0)"
         cell.trendingVoteAverageLabel.text = "Vote Average: " + "\(item.voteAverage ?? 0)"

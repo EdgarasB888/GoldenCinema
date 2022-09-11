@@ -9,15 +9,53 @@ import UIKit
 import CoreData
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
+    var window: UIWindow?
+    //var defaults: UserDefaults
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
+        //var defaults: UserDefaults
+        //UserDefaults.standard.register(defaults: [String : Bool])
+        let defaults = UserDefaults.standard
+        
+        let firstLaunch = defaults.bool(forKey: "FirstLaunch")
+        
+        if (firstLaunch)
+        {
+            print("Not first launch")
+            
+            self.window = UIWindow()
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            //let initialViewController = storyboard.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "InitialTabBarController") as! UITabBarController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        else
+        {
+            print("First launch")
+            
+            self.window = UIWindow()
 
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            //let initialViewController = storyboard.instantiateViewController(withIdentifier: "InitialTabBarController") as UITabBarController
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
+        
         return true
     }
 
+    /*
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -31,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+     */
 
     // MARK: - Core Data stack
 

@@ -11,6 +11,9 @@ class NetworkManager
 {
     static var apiKey = "0275832ae7f905291b34a7492e877652"
     
+    static var topMovies: [TopMovieInfo] = []
+    static var trendingMovies: [TrendingMovieInfo] = []
+    
     static func fetchTopMoviesData(completion: @escaping ([TopMovieInfo]) -> ())
     {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated?api_key=\(apiKey)&") else {return}
@@ -38,6 +41,7 @@ class NetworkManager
             do
             {
                 let jsonData = try JSONDecoder().decode(TopMovie.self, from: data)
+                topMovies = jsonData.results ?? []
                 completion (jsonData.results ?? [])
             }
             catch
@@ -75,6 +79,7 @@ class NetworkManager
             do
             {
                 let jsonData = try JSONDecoder().decode(TrendingMovie.self, from: data)
+                trendingMovies = jsonData.results ?? []
                 completion (jsonData.results ?? [])
             }
             catch

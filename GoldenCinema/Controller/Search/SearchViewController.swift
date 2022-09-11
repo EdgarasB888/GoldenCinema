@@ -11,8 +11,8 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
 {
     let searchController = UISearchController()
     
-    var trendingMovies: [TrendingMovieInfo] = []
-    var topMovies: [TopMovieInfo] = []
+    //var trendingMovies: [TrendingMovieInfo] = []
+    //var topMovies: [TopMovieInfo] = []
     var mergedMovies: [MergedMovie] = []
     var filteredMovies = [MergedMovie]()
     
@@ -22,48 +22,30 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
     {
         super.viewDidLoad()
         initSearchController()
-        
-        NetworkManager.fetchTopMoviesData { topMovies in
-            self.topMovies = topMovies
-            DispatchQueue.main.async
-            {
-                self.tableView.reloadData()
-            }
-        }
-        
-        NetworkManager.fetchTrendingMoviesData { trendingMovies in
-            self.trendingMovies = trendingMovies
-            DispatchQueue.main.async
-            {
-                self.tableView.reloadData()
-            }
-        }
-        
         title = "Search"
         
         mergeMovies()
-        self.tableView.reloadData()
         
-        dump(topMovies)
-        dump(trendingMovies)
-        dump(mergedMovies)
+        dump(NetworkManager.trendingMovies)
+        
+        self.tableView.reloadData()
     }
     
     func mergeMovies()
     {
-        for movie in topMovies
+        for movie in NetworkManager.topMovies
         {
             let mergedMovie = MergedMovie(title: movie.title ?? "", releaseDate: movie.releaseDate ?? "", category: "Top Rated", voteAverage: movie.voteAverage ?? 0.0, popularity: 0.0, imageUrl: movie.backdropPath ?? "")
             mergedMovies.append(mergedMovie)
         }
         
-        for movie in trendingMovies
+        for movie in NetworkManager.trendingMovies
         {
             let mergedMovie = MergedMovie(title: movie.title ?? "", releaseDate: movie.releaseDate ?? "", category: "Top Rated", voteAverage: movie.voteAverage ?? 0.0, popularity: movie.popularity ?? 0.0, imageUrl: movie.backdropPath ?? "")
             mergedMovies.append(mergedMovie)
         }
         
-        dump(mergedMovies)
+        //dump(mergedMovies)
     }
     
     func initSearchController()

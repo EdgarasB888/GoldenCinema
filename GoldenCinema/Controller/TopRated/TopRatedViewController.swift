@@ -169,7 +169,7 @@ extension TopRatedViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 200
+        return 250
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
@@ -197,7 +197,7 @@ extension TopRatedViewController: UITableViewDelegate, UITableViewDataSource
         
         let item = filteredTopMovies[indexPath.row]
         
-        cell.titleLabel.text = item.originalTitle
+        cell.titleLabel.text = item.title
         cell.releaseDateLabel.text = "Released: " + (item.releaseDate ?? "")
         cell.voteAverageLabel.text = "Vote Average: " + "\(item.voteAverage ?? 0)"
         cell.topRatedImageView.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original/" + (item.backdropPath ?? "")))
