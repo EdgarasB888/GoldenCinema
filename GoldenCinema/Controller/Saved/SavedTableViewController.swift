@@ -184,7 +184,15 @@ class SavedTableViewController: UITableViewController, UISearchResultsUpdating, 
         cell.titleLabel.text = item.title
         cell.releaseDateLabel.text = "Released: " + (item.releaseDate ?? "")
         cell.voteAverageLabel.text = "Vote Average: " + "\(item.voteAverage ?? "")"
-        cell.popularityLabel.text = "Popularity: " + "\(item.popularity)"
+        //cell.popularityLabel.text = "Popularity: " + "\(item.popularity)"
+        if(item.popularity == 0.0)
+        {
+            cell.popularityLabel.text = ""
+        }
+        else
+        {
+            cell.popularityLabel.text = "Popularity: " + "\(item.popularity)"
+        }
         cell.savedImageView.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original/" + (item.imageUrl ?? "")))
         
         return cell
@@ -240,6 +248,7 @@ class SavedTableViewController: UITableViewController, UISearchResultsUpdating, 
         vc.releaseDateText = item.releaseDate
         vc.voteAverageText = item.voteAverage
         vc.popularityText = "\(item.popularity)"
+        
         vc.imageUrl = "https://image.tmdb.org/t/p/original/" + (item.imageUrl ?? "")
         
         show(vc, sender: self)

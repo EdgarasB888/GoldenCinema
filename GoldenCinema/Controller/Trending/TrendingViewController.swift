@@ -106,6 +106,17 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
         searchBar.scopeButtonTitles = ["Title", "Release Date", "Popularity", "Vote Average"]
         searchBar.selectedScopeButtonIndex = 0
         
+        //searchBar.backgroundColor = UIColor(red: 241, green: 202, blue: 137, alpha: 1)
+        //searchBar.tintColor = UIColor(red: 241, green: 202, blue: 137, alpha: 1)
+        //searchBar.barTintColor = UIColor(red: 241, green: 202, blue: 137, alpha: 1)
+        //searchBar.setTextFieldColor(UIColor.green)
+        
+        //searchBar.backgroundColor = UIColor.green
+        //searchBar.tintColor = UIColor.green
+        //searchBar.barTintColor = UIColor.green
+        
+        
+        
         navigationItem.hidesSearchBarWhenScrolling = false
         
         searchBar.delegate = self
@@ -229,6 +240,4 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource
     
         return cell
     }
-    
-    
 }

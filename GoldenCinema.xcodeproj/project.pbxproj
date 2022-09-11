@@ -12,6 +12,7 @@
 		882AE69928C61006005CEAD8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882AE69828C61006005CEAD8 /* CoreDataManager.swift */; };
 		882BF6FF28C2346C00D772F1 /* TopRatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882BF6FE28C2346C00D772F1 /* TopRatedViewController.swift */; };
 		882BF70128C2367800D772F1 /* TopRatedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882BF70028C2367800D772F1 /* TopRatedTableViewCell.swift */; };
+		883AF89828CE18A80099D386 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AF89728CE18A80099D386 /* InfoViewController.swift */; };
 		8840337928C124CF007FDB4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8840337828C124CF007FDB4E /* AppDelegate.swift */; };
 		8840337B28C124CF007FDB4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8840337A28C124CF007FDB4E /* SceneDelegate.swift */; };
 		8840338028C124CF007FDB4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8840337E28C124CF007FDB4E /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		882AE69828C61006005CEAD8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010CoreDataManager.swift"; sourceTree = "<group>"; };
 		882BF6FE28C2346C00D772F1 /* TopRatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedViewController.swift; sourceTree = "<group>"; };
 		882BF70028C2367800D772F1 /* TopRatedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedTableViewCell.swift; sourceTree = "<group>"; };
+		883AF89728CE18A80099D386 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		8840337528C124CF007FDB4E /* GoldenCinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenCinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8840337828C124CF007FDB4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8840337A28C124CF007FDB4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		883AF89628CE187E0099D386 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				883AF89728CE18A80099D386 /* InfoViewController.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
 		8840336C28C124CF007FDB4E = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 				888C34D128CA286200E5626B /* Detail */,
 				888C34D328CA31C700E5626B /* Search */,
 				888C34D228CA2B5800E5626B /* Saved */,
+				883AF89628CE187E0099D386 /* Info */,
 				888C34D028CA285100E5626B /* Web */,
 			);
 			path = Controller;
@@ -297,6 +308,7 @@
 				882BF6FF28C2346C00D772F1 /* TopRatedViewController.swift in Sources */,
 				8851D53B28C7AF7400D32A39 /* WebViewController.swift in Sources */,
 				882AE69528C5EF68005CEAD8 /* TrendingTableViewCell.swift in Sources */,
+				883AF89828CE18A80099D386 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

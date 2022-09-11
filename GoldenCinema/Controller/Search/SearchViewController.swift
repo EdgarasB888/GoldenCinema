@@ -143,7 +143,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource
         }
         
         cell.titleLabel.text = item.title
-        cell.categoryLabel.text = item.category
+        cell.categoryLabel.text = "Category: " + (item.category ?? "")
         cell.releaseDateLabel.text = "Released: " + (item.releaseDate ?? "")
         cell.popularityLabel.text = "Popularity: " + "\(item.popularity ?? 0)"
         cell.voteAverageLabel.text = "Vote Average: " + "\(item.voteAverage ?? 0)"
