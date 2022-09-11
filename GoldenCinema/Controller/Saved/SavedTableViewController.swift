@@ -184,7 +184,7 @@ class SavedTableViewController: UITableViewController, UISearchResultsUpdating, 
         cell.titleLabel.text = item.title
         cell.releaseDateLabel.text = "Released: " + (item.releaseDate ?? "")
         cell.voteAverageLabel.text = "Vote Average: " + "\(item.voteAverage ?? "")"
-        //cell.popularityLabel.text = "Popularity: " + "\(item.popularity)"
+        cell.popularityLabel.text = "Popularity: " + "\(item.popularity)"
         if(item.popularity == 0.0)
         {
             cell.popularityLabel.text = ""

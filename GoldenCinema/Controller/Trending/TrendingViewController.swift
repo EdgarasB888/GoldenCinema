@@ -105,17 +105,12 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
         searchBar.showsScopeBar = true
         searchBar.scopeButtonTitles = ["Title", "Release Date", "Popularity", "Vote Average"]
         searchBar.selectedScopeButtonIndex = 0
-        
-        //searchBar.backgroundColor = UIColor(red: 241, green: 202, blue: 137, alpha: 1)
-        //searchBar.tintColor = UIColor(red: 241, green: 202, blue: 137, alpha: 1)
-        //searchBar.barTintColor = UIColor(red: 241, green: 202, blue: 137, alpha: 1)
+
         //searchBar.setTextFieldColor(UIColor.green)
         
-        //searchBar.backgroundColor = UIColor.green
-        //searchBar.tintColor = UIColor.green
-        //searchBar.barTintColor = UIColor.green
-        
-        
+        searchBar.backgroundColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+        searchBar.tintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+        searchBar.barTintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
         
         navigationItem.hidesSearchBarWhenScrolling = false
         
@@ -179,24 +174,13 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
     }
     
     
-    // MARK: - Navigation
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else {return}
-        
-        vc.trendingMovies = trendingMovies
-    }
-     */
+    
 }
 
 extension TrendingViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        //return trendingMovies.count
         return filteredTrendingMovies.count
     }
     
@@ -229,7 +213,6 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource
     {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrendingTableViewCell", for: indexPath) as? TrendingTableViewCell else {return UITableViewCell()}
         
-       // let item = trendingMovies[indexPath.row]
         let item = filteredTrendingMovies[indexPath.row]
         
         cell.trendingTitleLabel.text = item.title

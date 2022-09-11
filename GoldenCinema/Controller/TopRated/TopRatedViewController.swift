@@ -93,6 +93,10 @@ class TopRatedViewController: UIViewController, UISearchBarDelegate
         searchBar.scopeButtonTitles = ["Title", "Release Date", "Vote Average"]
         searchBar.selectedScopeButtonIndex = 0
         
+        searchBar.backgroundColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+        searchBar.tintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+        searchBar.barTintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+        
         navigationItem.hidesSearchBarWhenScrolling = false
         
         searchBar.delegate = self
@@ -146,24 +150,12 @@ class TopRatedViewController: UIViewController, UISearchBarDelegate
                 print("No type!")
         }
     }
-    
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else {return}
-        
-        vc.topMovies = topMovies
-    }
-     */
 }
 
 extension TopRatedViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        //return topMovies.count
         return filteredTopMovies.count
     }
     

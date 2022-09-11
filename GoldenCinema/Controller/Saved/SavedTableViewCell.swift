@@ -15,8 +15,6 @@ class SavedTableViewCell: UITableViewCell
     @IBOutlet weak var voteAverageLabel: UILabel!
     @IBOutlet weak var popularityLabel: UILabel!
     
-    
-    
     @IBOutlet weak var savedImageView: UIImageView!
     
     override func awakeFromNib()

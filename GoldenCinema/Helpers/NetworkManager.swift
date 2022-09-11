@@ -54,7 +54,7 @@ class NetworkManager
     
     static func fetchTrendingMoviesData(completion: @escaping ([TrendingMovieInfo]) -> ())
     {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)&language=en-US&") else {return}
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)&language=en-US") else {return}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
