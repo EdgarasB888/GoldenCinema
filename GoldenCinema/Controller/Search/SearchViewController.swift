@@ -11,7 +11,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
 {
     let searchController = UISearchController()
     
-    //var trendingMovies: [TrendingMovieInfo] = []
+    var trendingMovies: [TrendingMovieInfo] = []
     //var topMovies: [TopMovieInfo] = []
     var mergedMovies: [MergedMovie] = []
     var filteredMovies = [MergedMovie]()
@@ -24,28 +24,80 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         initSearchController()
         title = "Search"
         
+        NetworkManager.fetchTrendingMoviesData { trendingMovies in
+            self.trendingMovies = trendingMovies
+            //self.filteredTrendingMovies = trendingMovies
+            DispatchQueue.main.async
+            {
+                self.tableView.reloadData()
+            }
+        }
+        
         mergeMovies()
+        self.tableView.reloadData()
         
         dump(NetworkManager.trendingMovies)
         
-        self.tableView.reloadData()
+        setupBarButtonMenu()
     }
     
     func mergeMovies()
     {
         for movie in NetworkManager.topMovies
         {
-            let mergedMovie = MergedMovie(title: movie.title ?? "", releaseDate: movie.releaseDate ?? "", category: "Top Rated", voteAverage: movie.voteAverage ?? 0.0, popularity: 0.0, imageUrl: movie.backdropPath ?? "")
+            let mergedMovie = MergedMovie(title: movie.title ?? "", description: movie.overview ?? "", releaseDate: movie.releaseDate ?? "", category: "Top Rated", voteAverage: movie.voteAverage ?? 0.0, popularity: 0.0, imageUrl: movie.backdropPath ?? "")
             mergedMovies.append(mergedMovie)
         }
         
         for movie in NetworkManager.trendingMovies
         {
-            let mergedMovie = MergedMovie(title: movie.title ?? "", releaseDate: movie.releaseDate ?? "", category: "Top Rated", voteAverage: movie.voteAverage ?? 0.0, popularity: movie.popularity ?? 0.0, imageUrl: movie.backdropPath ?? "")
+            let mergedMovie = MergedMovie(title: movie.title ?? "", description: movie.overview ?? "", releaseDate: movie.releaseDate ?? "", category: "Trending", voteAverage: movie.voteAverage ?? 0.0, popularity: movie.popularity ?? 0.0, imageUrl: movie.backdropPath ?? "")
             mergedMovies.append(mergedMovie)
         }
+    }
+    
+    func setupBarButtonMenu()
+    {
+        let barButtonMenu = UIMenu(title: "Sort by: ", children: [
+            UIAction(title: NSLocalizedString("Title Ascending", comment: ""), image: UIImage(systemName: "textformat.abc"), handler: { action in
+                self.mergedMovies.sort {
+                    $0.title ?? "" < $1.title ?? ""
+                }
+                self.tableView.reloadData()
+            }),
+            UIAction(title: NSLocalizedString("Title Descending", comment: ""), image: UIImage(systemName: "textformat.abc"), handler: { action in
+                self.mergedMovies.sort {
+                    $0.title ?? "" > $1.title ?? ""
+                }
+                self.tableView.reloadData()
+            }),
+            UIAction(title: NSLocalizedString("Release Date Ascending", comment: ""), image: UIImage(systemName: "calendar"), handler: { action in
+                self.mergedMovies.sort {
+                    $0.releaseDate ?? "" < $1.releaseDate ?? ""
+                }
+                self.tableView.reloadData()
+            }),
+            UIAction(title: NSLocalizedString("Release Date Descending", comment: ""), image: UIImage(systemName: "calendar"), handler: { action in
+                self.mergedMovies.sort {
+                    $0.releaseDate ?? "" > $1.releaseDate ?? ""
+                }
+                self.tableView.reloadData()
+            }),
+            UIAction(title: NSLocalizedString("Vote Average Ascending", comment: ""), image: UIImage(systemName: "checkmark.rectangle.portrait"), handler: { action in
+                self.mergedMovies.sort {
+                    $0.voteAverage ?? 0.0 < $1.voteAverage ?? 0.0
+                }
+                self.tableView.reloadData()
+            }),
+            UIAction(title: NSLocalizedString("Vote Average Descending", comment: ""), image: UIImage(systemName: "checkmark.rectangle.portrait"), handler: { action in
+                self.mergedMovies.sort {
+                    $0.voteAverage ?? 0.0 > $1.voteAverage ?? 0.0
+                }
+                self.tableView.reloadData()
+            })
+        ])
         
-        //dump(mergedMovies)
+        navigationItem.rightBarButtonItem?.menu = barButtonMenu
     }
     
     func initSearchController()
@@ -127,12 +179,39 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource
         cell.titleLabel.text = item.title
         cell.categoryLabel.text = "Category: " + (item.category ?? "")
         cell.releaseDateLabel.text = "Released: " + (item.releaseDate ?? "")
-        cell.popularityLabel.text = "Popularity: " + "\(item.popularity ?? 0)"
+        if(item.popularity == 0.0)
+        {
+            cell.popularityLabel.text = ""
+        }
+        else
+        {
+            cell.popularityLabel.text = "Popularity: " + "\(item.popularity ?? 0)"
+        }
         cell.voteAverageLabel.text = "Vote Average: " + "\(item.voteAverage ?? 0)"
         
         cell.mergedImageView.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original/" + (item.imageUrl ?? "")))
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {return}
+        
+        let item: MergedMovie!
+        item = mergedMovies[indexPath.row]
+    
+        vc.descriptionText = item.description
+        vc.titleText = item.title
+        vc.releaseDateText = item.releaseDate
+        vc.voteAverageText = "\(item.voteAverage ?? 0.0)"
+        vc.popularityText = "\(item.popularity ?? 0.0)"
+        vc.imageUrl = "https://image.tmdb.org/t/p/original/" + (item.imageUrl ?? "")
+        vc.imageToSaveUrl = "https://image.tmdb.org/t/p/original/" + (item.imageUrl ?? "")
+        
+        show(vc, sender: self)
     }
     
 }

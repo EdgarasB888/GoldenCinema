@@ -477,7 +477,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pJF-xj-w5L">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.arrow.down" catalog="system" id="mTI-9d-IJR">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.arrow.down" catalog="system" changesSelectionAsPrimaryAction="YES" id="mTI-9d-IJR">
                             <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
                     </navigationItem>
@@ -720,7 +720,7 @@
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="dlY-lT-ywq"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="nso-xg-7mH"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>

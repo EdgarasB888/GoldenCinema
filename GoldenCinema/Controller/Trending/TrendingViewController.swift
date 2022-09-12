@@ -191,7 +191,7 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource
         guard let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {return}
         
         let item: TrendingMovieInfo!
-        item = trendingMovies[indexPath.row]
+        item = filteredTrendingMovies[indexPath.row]
     
         vc.descriptionText = item.overview
         vc.titleText = item.title

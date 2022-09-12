@@ -171,7 +171,7 @@ extension TopRatedViewController: UITableViewDelegate, UITableViewDataSource
         guard let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {return}
         
         let item: TopMovieInfo!
-        item = topMovies[indexPath.row]
+        item = filteredTopMovies[indexPath.row]
         
         vc.descriptionText = item.overview
         vc.titleText = item.title
