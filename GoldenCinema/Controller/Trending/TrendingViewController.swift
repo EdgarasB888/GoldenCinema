@@ -36,13 +36,8 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
             self.tableView.reloadData()
         }
         
-        //setupSearchBar()
-        setupBarButtonMenu()
-    }
-    
-    override func viewWillAppear(_ animated: Bool)
-    {
         setupSearchBar()
+        setupBarButtonMenu()
     }
     
     func setupBarButtonMenu()
@@ -108,8 +103,10 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
         searchBar.showsScopeBar = true
         searchBar.scopeButtonTitles = ["Title", "Release Date", "Popularity", "Vote Average"]
         searchBar.selectedScopeButtonIndex = 0
+        searchBar.showsCancelButton = true
 
         //searchBar.setTextFieldColor(UIColor.green)
+        
         
         // User Interface is Dark
         if self.traitCollection.userInterfaceStyle == .dark
@@ -125,11 +122,17 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
             searchBar.tintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
             searchBar.barTintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
         }
+         
         
         navigationItem.hidesSearchBarWhenScrolling = false
         
         searchBar.delegate = self
         self.tableView.tableHeaderView = searchBar
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
+    {
+        setupSearchBar()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)

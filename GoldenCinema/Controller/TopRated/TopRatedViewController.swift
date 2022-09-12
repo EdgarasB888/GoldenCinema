@@ -88,10 +88,11 @@ class TopRatedViewController: UIViewController, UISearchBarDelegate
     func setupSearchBar()
     {
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width:(UIScreen.main.bounds.width), height: 70))
-        
+    
         searchBar.showsScopeBar = true
         searchBar.scopeButtonTitles = ["Title", "Release Date", "Vote Average"]
         searchBar.selectedScopeButtonIndex = 0
+        searchBar.showsCancelButton = true
         
         // User Interface is Dark
         if self.traitCollection.userInterfaceStyle == .dark
@@ -112,6 +113,11 @@ class TopRatedViewController: UIViewController, UISearchBarDelegate
         
         searchBar.delegate = self
         self.tableView.tableHeaderView = searchBar
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
+    {
+        setupSearchBar()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
