@@ -93,9 +93,20 @@ class TopRatedViewController: UIViewController, UISearchBarDelegate
         searchBar.scopeButtonTitles = ["Title", "Release Date", "Vote Average"]
         searchBar.selectedScopeButtonIndex = 0
         
-        searchBar.backgroundColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
-        searchBar.tintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
-        searchBar.barTintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+        // User Interface is Dark
+        if self.traitCollection.userInterfaceStyle == .dark
+        {
+            searchBar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            searchBar.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            searchBar.barTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        }
+        // User Interface is Light
+        else
+        {
+            searchBar.backgroundColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+            searchBar.tintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+            searchBar.barTintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+        }
         
         navigationItem.hidesSearchBarWhenScrolling = false
         

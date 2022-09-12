@@ -29,17 +29,6 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
 
         title = "Trending"
         
-        /*
-        NetworkManager.fetchTrendingMoviesData { trendingMovies in
-            self.trendingMovies = trendingMovies
-            self.filteredTrendingMovies = trendingMovies
-            DispatchQueue.main.async
-            {
-                self.tableView.reloadData()
-            }
-        }
-         */
-        
         self.trendingMovies = AppDelegate.trendingMovies
         self.filteredTrendingMovies = AppDelegate.trendingMovies
         DispatchQueue.main.async
@@ -47,8 +36,13 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
             self.tableView.reloadData()
         }
         
-        setupSearchBar()
+        //setupSearchBar()
         setupBarButtonMenu()
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        setupSearchBar()
     }
     
     func setupBarButtonMenu()
@@ -117,9 +111,20 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
 
         //searchBar.setTextFieldColor(UIColor.green)
         
-        searchBar.backgroundColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
-        searchBar.tintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
-        searchBar.barTintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+        // User Interface is Dark
+        if self.traitCollection.userInterfaceStyle == .dark
+        {
+            searchBar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            searchBar.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            searchBar.barTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        }
+        // User Interface is Light
+        else
+        {
+            searchBar.backgroundColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+            searchBar.tintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+            searchBar.barTintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
+        }
         
         navigationItem.hidesSearchBarWhenScrolling = false
         
@@ -181,9 +186,6 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
                 print("No type!")
         }
     }
-    
-    
-    
 }
 
 extension TrendingViewController: UITableViewDelegate, UITableViewDataSource

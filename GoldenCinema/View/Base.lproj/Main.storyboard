@@ -19,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JCj-wM-hzG">
                                 <rect key="frame" x="0.0" y="88" width="428" height="755"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.85490196080000003" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopRatedTableViewCell" rowHeight="249" id="dG7-n5-0Z3" customClass="TopRatedTableViewCell" customModule="GoldenCinema" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="249"/>
@@ -67,7 +67,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.94901960784313721" green="0.85490196078431369" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="CellColor"/>
                                             <constraints>
                                                 <constraint firstItem="qUy-as-U6j" firstAttribute="leading" secondItem="xq1-v7-Djq" secondAttribute="trailing" constant="8" symbolic="YES" id="4c1-y6-23L"/>
                                                 <constraint firstItem="qUy-as-U6j" firstAttribute="top" secondItem="WXR-vT-QqO" secondAttribute="topMargin" id="O8a-GC-XJv"/>
@@ -78,7 +78,7 @@
                                                 <constraint firstItem="qUy-as-U6j" firstAttribute="trailing" secondItem="WXR-vT-QqO" secondAttribute="trailingMargin" id="uN9-fI-ell"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.80000000000000004" green="0.60784313729999995" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="CellColor"/>
                                         <connections>
                                             <outlet property="releaseDateLabel" destination="BgC-b0-JIh" id="REq-gd-sxB"/>
                                             <outlet property="titleLabel" destination="3t2-vd-Mj2" id="LSe-bB-ocj"/>
@@ -134,7 +134,7 @@
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="SeI-MT-lQ4">
                                                 <rect key="frame" x="0.0" y="466" width="304" height="185"/>
-                                                <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="185" id="eHG-kn-ue7"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="185" id="shU-bl-1hF"/>
@@ -185,7 +185,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lsV-ND-4JN"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="AccentColor"/>
                         <constraints>
                             <constraint firstItem="xaJ-bj-H7O" firstAttribute="leading" secondItem="lsV-ND-4JN" secondAttribute="leading" constant="62" id="G4v-LZ-bGS"/>
                             <constraint firstItem="xaJ-bj-H7O" firstAttribute="centerX" secondItem="lsV-ND-4JN" secondAttribute="centerX" id="TxU-mZ-6Ul"/>
@@ -254,7 +254,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="0v4-HV-sjf">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="AccentColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavedTableViewCell" rowHeight="312" id="Fmm-7c-3YL" customClass="SavedTableViewCell" customModule="GoldenCinema" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="312"/>
@@ -330,7 +330,7 @@
                                         <constraint firstItem="HEg-e7-Q2f" firstAttribute="leading" secondItem="1pL-ka-wKy" secondAttribute="trailing" constant="8" symbolic="YES" id="qRP-NJ-opR"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.85490196080000003" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="CellColor"/>
                                 <connections>
                                     <outlet property="categoryLabel" destination="XRw-bV-JDD" id="Vh6-9a-Axm"/>
                                     <outlet property="popularityLabel" destination="7Ub-Zf-SWy" id="Nh4-05-by4"/>
@@ -440,7 +440,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.94901960780000005" green="0.85490196080000003" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="CellColor"/>
                                             <constraints>
                                                 <constraint firstItem="3QZ-Cy-0QV" firstAttribute="top" secondItem="snm-ji-iA7" secondAttribute="topMargin" constant="10" id="5dK-EC-m5o"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="8BP-RU-uly" secondAttribute="bottom" constant="9" id="EuE-7G-VaQ"/>
@@ -500,12 +500,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cMU-s6-ETb">
                         <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="AccentColor"/>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="AccentColor"/>
                         </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -618,7 +617,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Ii-Qf-YgV"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="AccentColor"/>
                         <constraints>
                             <constraint firstItem="1Ii-Qf-YgV" firstAttribute="trailing" secondItem="nWN-Zw-dUd" secondAttribute="trailing" constant="70" id="1qD-yP-EGA"/>
                             <constraint firstItem="85S-IS-Te2" firstAttribute="leading" secondItem="1Ii-Qf-YgV" secondAttribute="leading" constant="16" id="2ES-EJ-mtK"/>
@@ -643,13 +642,13 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Noh-aa-4hB">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="AccentColor"/>
                         <color key="selectedImageTintColor" red="0.64705882349999999" green="0.49019607840000001" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                         <tabBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="AccentColor"/>
                         </tabBarAppearance>
                         <tabBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="AccentColor"/>
                         </tabBarAppearance>
                     </tabBar>
                     <connections>
@@ -674,10 +673,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="AccentColor"/>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="AccentColor"/>
                         </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -699,7 +698,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gpx-RK-WbM">
                                 <rect key="frame" x="0.0" y="88" width="428" height="755"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.85490196080000003" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrendingTableViewCell" rowHeight="245" id="ma6-TN-MN2" customClass="TrendingTableViewCell" customModule="GoldenCinema" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="245"/>
@@ -757,7 +756,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.94901960780000005" green="0.85490196080000003" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="CellColor"/>
                                             <constraints>
                                                 <constraint firstItem="iLd-P7-H84" firstAttribute="top" secondItem="1ts-M5-7rY" secondAttribute="topMargin" id="HIi-TV-dOf"/>
                                                 <constraint firstItem="iLd-P7-H84" firstAttribute="leading" secondItem="vda-db-EYA" secondAttribute="trailing" constant="8" symbolic="YES" id="HLc-jE-xbp"/>
@@ -815,10 +814,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="AccentColor"/>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="AccentColor"/>
                         </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -841,10 +840,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.792156862745098" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                         <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="AccentColor"/>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="AccentColor"/>
                         </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -869,7 +868,10 @@
         <image name="textformat.abc" catalog="system" width="128" height="61"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94499999284744263" green="0.79199999570846558" blue="0.53700000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CellColor">
+            <color red="0.94900000095367432" green="0.85500001907348633" blue="0.76499998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -157,7 +157,22 @@ class SavedTableViewController: UITableViewController, UISearchResultsUpdating, 
         {
             return filteredMovies.count
         }
-        return savedMovies.count
+        else if(savedMovies.count > 0)
+        {
+            return savedMovies.count
+        }
+        else
+        {
+            let customPlaceholder = CustomPlaceholderView()
+            tableView.backgroundView = customPlaceholder
+
+            customPlaceholder.safetyAreaTopAnchor = tableView.safeAreaLayoutGuide.topAnchor
+            customPlaceholder.safetyAreaBottomAnchor = tableView.safeAreaLayoutGuide.bottomAnchor
+            customPlaceholder.safetyLeadingAnchor = tableView.safeAreaLayoutGuide.leadingAnchor
+            customPlaceholder.safetyTrailingAnchor = tableView.safeAreaLayoutGuide.trailingAnchor
+
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -167,6 +182,11 @@ class SavedTableViewController: UITableViewController, UISearchResultsUpdating, 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+        if savedMovies.count != 0
+        {
+            tableView.backgroundView?.isHidden = true
+        }
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SavedTableViewCell", for: indexPath) as? SavedTableViewCell else {return UITableViewCell()}
         
         let item: MovieItem!
