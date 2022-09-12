@@ -124,29 +124,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="xaJ-bj-H7O">
-                                <rect key="frame" x="62" y="95" width="304" height="746"/>
+                                <rect key="frame" x="62" y="90" width="304" height="756"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Och-yM-nxt">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="651"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Och-yM-nxt">
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="661"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uh2-3L-9vH">
-                                                <rect key="frame" x="0.0" y="0.0" width="304" height="451"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="491"/>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="SeI-MT-lQ4">
-                                                <rect key="frame" x="0.0" y="466" width="304" height="185"/>
+                                                <rect key="frame" x="0.0" y="496" width="304" height="165"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="185" id="eHG-kn-ue7"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="185" id="shU-bl-1hF"/>
+                                                    <constraint firstAttribute="height" constant="165" id="shU-bl-1hF"/>
                                                 </constraints>
                                                 <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eVz-Fi-siB">
-                                        <rect key="frame" x="78" y="657" width="148" height="89"/>
+                                        <rect key="frame" x="78" y="667" width="148" height="89"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDN-g7-gCa">
                                                 <rect key="frame" x="0.0" y="0.0" width="148" height="42"/>
@@ -180,18 +179,17 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Och-yM-nxt" firstAttribute="leading" secondItem="xaJ-bj-H7O" secondAttribute="leadingMargin" id="JcG-Tq-2oh"/>
+                                    <constraint firstItem="Och-yM-nxt" firstAttribute="leading" secondItem="xaJ-bj-H7O" secondAttribute="leadingMargin" id="KVJ-ob-kQ3"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lsV-ND-4JN"/>
                         <color key="backgroundColor" name="AccentColor"/>
                         <constraints>
-                            <constraint firstItem="xaJ-bj-H7O" firstAttribute="leading" secondItem="lsV-ND-4JN" secondAttribute="leading" constant="62" id="G4v-LZ-bGS"/>
-                            <constraint firstItem="xaJ-bj-H7O" firstAttribute="centerX" secondItem="lsV-ND-4JN" secondAttribute="centerX" id="TxU-mZ-6Ul"/>
-                            <constraint firstItem="lsV-ND-4JN" firstAttribute="trailing" secondItem="xaJ-bj-H7O" secondAttribute="trailing" constant="62" id="WYG-5j-f96"/>
-                            <constraint firstItem="xaJ-bj-H7O" firstAttribute="top" secondItem="lsV-ND-4JN" secondAttribute="top" constant="51" id="dnZ-TN-RHx"/>
-                            <constraint firstItem="xaJ-bj-H7O" firstAttribute="centerY" secondItem="lsV-ND-4JN" secondAttribute="centerY" id="fEn-uI-KmA"/>
+                            <constraint firstItem="xaJ-bj-H7O" firstAttribute="centerY" secondItem="lsV-ND-4JN" secondAttribute="centerY" id="MU8-xh-d7c"/>
+                            <constraint firstItem="xaJ-bj-H7O" firstAttribute="centerX" secondItem="lsV-ND-4JN" secondAttribute="centerX" id="hW5-tt-ALP"/>
+                            <constraint firstItem="xaJ-bj-H7O" firstAttribute="top" secondItem="lsV-ND-4JN" secondAttribute="top" constant="46" id="lhC-Mx-PTE"/>
+                            <constraint firstItem="xaJ-bj-H7O" firstAttribute="leading" secondItem="lsV-ND-4JN" secondAttribute="leading" constant="62" id="oSd-dX-aFe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Eaf-g5-dZD">
@@ -210,7 +208,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8aR-6K-4Se" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="pES-si-OTc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3350" y="1401"/>
+            <point key="canvasLocation" x="3349.0654205607475" y="1400.8639308855293"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="WGl-lL-jCd">
@@ -672,7 +670,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Qvj-5U-gEg">
                         <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" name="NavigationColor"/>
                         <navigationBarAppearance key="standardAppearance">
                             <color key="backgroundColor" name="AccentColor"/>
@@ -814,7 +811,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="VjD-kX-6MN">
                         <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.79215686269999996" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" name="NavigationColor"/>
                         <navigationBarAppearance key="standardAppearance">
                             <color key="backgroundColor" name="AccentColor"/>
@@ -841,7 +837,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="fgR-jN-cT8">
                         <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.94509803921568625" green="0.792156862745098" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" name="NavigationColor"/>
                         <navigationBarAppearance key="standardAppearance">
                             <color key="backgroundColor" name="AccentColor"/>
