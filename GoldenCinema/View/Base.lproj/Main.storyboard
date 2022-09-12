@@ -210,7 +210,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8aR-6K-4Se" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="pES-si-OTc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4180" y="131"/>
+            <point key="canvasLocation" x="3350" y="1401"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="WGl-lL-jCd">
@@ -245,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqr-F8-jKb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5162" y="132"/>
+            <point key="canvasLocation" x="4333" y="1402"/>
         </scene>
         <!--Saved Table View Controller-->
         <scene sceneID="2Fp-Wu-fWJ">
@@ -353,7 +353,7 @@
                                 <action selector="deleteAllSavedItems:" destination="Ey1-v0-u3g" id="faa-6c-pqF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.arrow.down" catalog="system" id="Lhh-0R-qSi">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.arrow.down" catalog="system" changesSelectionAsPrimaryAction="YES" id="Lhh-0R-qSi">
                             <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
                     </navigationItem>
@@ -792,7 +792,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QkJ-Wr-ogh">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.arrow.down" catalog="system" id="ljL-fm-q2r">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.arrow.down" catalog="system" changesSelectionAsPrimaryAction="YES" id="ljL-fm-q2r">
                             <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
                     </navigationItem>

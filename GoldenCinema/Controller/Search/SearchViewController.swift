@@ -11,8 +11,6 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
 {
     let searchController = UISearchController()
     
-    var trendingMovies: [TrendingMovieInfo] = []
-    //var topMovies: [TopMovieInfo] = []
     var mergedMovies: [MergedMovie] = []
     var filteredMovies = [MergedMovie]()
     
@@ -24,17 +22,11 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         initSearchController()
         title = "Search"
         
-        NetworkManager.fetchTrendingMoviesData { trendingMovies in
-            self.trendingMovies = trendingMovies
-            //self.filteredTrendingMovies = trendingMovies
-            DispatchQueue.main.async
-            {
-                self.tableView.reloadData()
-            }
-        }
-        
         mergeMovies()
-        self.tableView.reloadData()
+        DispatchQueue.main.async
+        {
+            self.tableView.reloadData()
+        }
         
         dump(NetworkManager.trendingMovies)
         

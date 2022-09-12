@@ -12,12 +12,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
-    //var defaults: UserDefaults
+    static var trendingMovies: [TrendingMovieInfo] = []
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        //var defaults: UserDefaults
-        //UserDefaults.standard.register(defaults: [String : Bool])
+        NetworkManager.fetchTrendingMoviesData { trendingMovies in
+            AppDelegate.trendingMovies = trendingMovies
+        }
+
         let defaults = UserDefaults.standard
         
         let firstLaunch = defaults.bool(forKey: "FirstLaunch")
@@ -30,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            //let initialViewController = storyboard.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "InitialTabBarController") as! UITabBarController
             
             self.window?.rootViewController = initialViewController
@@ -43,8 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             self.window = UIWindow()
 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            //let initialViewController = storyboard.instantiateViewController(withIdentifier: "InitialTabBarController") as UITabBarController
+        
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
             
             self.window?.rootViewController = initialViewController

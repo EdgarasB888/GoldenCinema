@@ -29,6 +29,7 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
 
         title = "Trending"
         
+        /*
         NetworkManager.fetchTrendingMoviesData { trendingMovies in
             self.trendingMovies = trendingMovies
             self.filteredTrendingMovies = trendingMovies
@@ -36,6 +37,14 @@ class TrendingViewController: UIViewController, UISearchBarDelegate
             {
                 self.tableView.reloadData()
             }
+        }
+         */
+        
+        self.trendingMovies = AppDelegate.trendingMovies
+        self.filteredTrendingMovies = AppDelegate.trendingMovies
+        DispatchQueue.main.async
+        {
+            self.tableView.reloadData()
         }
         
         setupSearchBar()
