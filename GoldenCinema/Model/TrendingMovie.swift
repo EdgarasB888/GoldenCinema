@@ -29,7 +29,8 @@ struct TrendingMovieInfo: Codable
     let backdropPath: String?
     let genreIDS: [Int]?
     let id: Int?
-    let originalLanguage: OriginalLanguage?
+    //let originalLanguage: OriginalLanguage?
+    let originalLanguage: String?
     let originalTitle, overview: String?
     let popularity: Double?
     let posterPath, releaseDate, title: String?
