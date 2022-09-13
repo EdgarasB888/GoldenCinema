@@ -84,6 +84,7 @@ class TopRatedViewController: UIViewController, UISearchBarDelegate
             })
         ])
         
+        
         navigationItem.rightBarButtonItem?.menu = barButtonMenu
     }
     

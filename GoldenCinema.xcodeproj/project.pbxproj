@@ -33,6 +33,8 @@
 		88E57F4928D0E90B0026CA05 /* SFUIText-RegularG1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88E57F4828D0E90A0026CA05 /* SFUIText-RegularG1.otf */; };
 		88E57F4B28D0E9190026CA05 /* SFUIText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88E57F4A28D0E9190026CA05 /* SFUIText-Semibold.otf */; };
 		88E57F4D28D0EF3B0026CA05 /* SFUIText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88E57F4C28D0EF3B0026CA05 /* SFUIText-Bold.otf */; };
+		88E57F4F28D0F5E20026CA05 /* BounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E57F4E28D0F5E20026CA05 /* BounceButton.swift */; };
+		88E57F5128D0F6230026CA05 /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E57F5028D0F6230026CA05 /* DesignButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		88E57F4828D0E90A0026CA05 /* SFUIText-RegularG1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-RegularG1.otf"; sourceTree = "<group>"; };
 		88E57F4A28D0E9190026CA05 /* SFUIText-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Semibold.otf"; sourceTree = "<group>"; };
 		88E57F4C28D0EF3B0026CA05 /* SFUIText-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Bold.otf"; sourceTree = "<group>"; };
+		88E57F4E28D0F5E20026CA05 /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
+		88E57F5028D0F6230026CA05 /* DesignButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,8 @@
 				88E57F4828D0E90A0026CA05 /* SFUIText-RegularG1.otf */,
 				88E57F4A28D0E9190026CA05 /* SFUIText-Semibold.otf */,
 				88E57F4C28D0EF3B0026CA05 /* SFUIText-Bold.otf */,
+				88E57F5028D0F6230026CA05 /* DesignButton.swift */,
+				88E57F4E28D0F5E20026CA05 /* BounceButton.swift */,
 			);
 			path = Extras;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				882AE69728C60817005CEAD8 /* DetailViewController.swift in Sources */,
+				88E57F4F28D0F5E20026CA05 /* BounceButton.swift in Sources */,
 				8840337928C124CF007FDB4E /* AppDelegate.swift in Sources */,
 				8855BFFE28C50C9E00C86872 /* SearchViewController.swift in Sources */,
 				8855BFF528C4FD3800C86872 /* TrendingViewController.swift in Sources */,
@@ -327,6 +334,7 @@
 				882AE69928C61006005CEAD8 /* CoreDataManager.swift in Sources */,
 				882BF6FF28C2346C00D772F1 /* TopRatedViewController.swift in Sources */,
 				8851D53B28C7AF7400D32A39 /* WebViewController.swift in Sources */,
+				88E57F5128D0F6230026CA05 /* DesignButton.swift in Sources */,
 				882AE69528C5EF68005CEAD8 /* TrendingTableViewCell.swift in Sources */,
 				883AF89828CE18A80099D386 /* InfoViewController.swift in Sources */,
 			);
