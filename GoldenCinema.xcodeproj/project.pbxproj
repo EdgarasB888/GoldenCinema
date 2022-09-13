@@ -30,6 +30,9 @@
 		8855BFFE28C50C9E00C86872 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855BFFD28C50C9E00C86872 /* SearchViewController.swift */; };
 		8855C00028C50E7400C86872 /* TrendingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8855BFFF28C50E7400C86872 /* TrendingMovie.swift */; };
 		888C34CD28CA280A00E5626B /* SavedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888C34CC28CA280A00E5626B /* SavedTableViewController.swift */; };
+		88E57F4928D0E90B0026CA05 /* SFUIText-RegularG1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88E57F4828D0E90A0026CA05 /* SFUIText-RegularG1.otf */; };
+		88E57F4B28D0E9190026CA05 /* SFUIText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88E57F4A28D0E9190026CA05 /* SFUIText-Semibold.otf */; };
+		88E57F4D28D0EF3B0026CA05 /* SFUIText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88E57F4C28D0EF3B0026CA05 /* SFUIText-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		8855BFFD28C50C9E00C86872 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8855BFFF28C50E7400C86872 /* TrendingMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMovie.swift; sourceTree = "<group>"; };
 		888C34CC28CA280A00E5626B /* SavedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewController.swift; sourceTree = "<group>"; };
+		88E57F4828D0E90A0026CA05 /* SFUIText-RegularG1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-RegularG1.otf"; sourceTree = "<group>"; };
+		88E57F4A28D0E9190026CA05 /* SFUIText-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Semibold.otf"; sourceTree = "<group>"; };
+		88E57F4C28D0EF3B0026CA05 /* SFUIText-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				8847DE5728CF6870009A0116 /* CustomPlaceholderView.swift */,
+				88E57F4828D0E90A0026CA05 /* SFUIText-RegularG1.otf */,
+				88E57F4A28D0E9190026CA05 /* SFUIText-Semibold.otf */,
+				88E57F4C28D0EF3B0026CA05 /* SFUIText-Bold.otf */,
 			);
 			path = Extras;
 			sourceTree = "<group>";
@@ -285,6 +294,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88E57F4B28D0E9190026CA05 /* SFUIText-Semibold.otf in Resources */,
+				88E57F4928D0E90B0026CA05 /* SFUIText-RegularG1.otf in Resources */,
+				88E57F4D28D0EF3B0026CA05 /* SFUIText-Bold.otf in Resources */,
 				8840338828C124D4007FDB4E /* LaunchScreen.storyboard in Resources */,
 				8840338528C124D4007FDB4E /* Assets.xcassets in Resources */,
 				8840338028C124CF007FDB4E /* Main.storyboard in Resources */,

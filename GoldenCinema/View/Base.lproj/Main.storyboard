@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Bold.otf">
+            <string>SFUIText-Bold</string>
+        </array>
+        <array key="SFUIText-RegularG1.otf">
+            <string>SFUIText-RegularG1</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Top Rated View Controller-->
         <scene sceneID="iCw-NY-b3s">
@@ -40,7 +48,7 @@
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="M1W-46-k60"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="anr-36-VKx"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -50,7 +58,7 @@
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="7bu-0U-tgh"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="CMf-6S-ehc"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -60,7 +68,7 @@
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="mBw-Vl-PDu"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="oSn-RR-YWU"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -139,7 +147,7 @@
                                                     <constraint firstAttribute="height" constant="165" id="shU-bl-1hF"/>
                                                 </constraints>
                                                 <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -273,7 +281,7 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="YMh-Ne-Tvw"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="ctW-az-DkO"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI  Text" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRw-bV-JDD">
@@ -282,7 +290,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="ans-MS-IeS"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="rXo-R0-ofc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -292,7 +300,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="6FP-N6-UGk"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="f3y-Vr-2Ua"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -302,7 +310,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="Gxt-7X-vGa"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="bsv-Uu-S2t"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -312,7 +320,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="VU9-Dq-bbP"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="ohh-GM-cfq"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -391,7 +399,7 @@
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="IEy-mY-1jH"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="Woz-uU-SDu"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -401,7 +409,7 @@
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="U8l-Ep-KhY"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="bIJ-LZ-gJS"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -411,7 +419,7 @@
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="kbH-nK-Iwz"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="tOu-u5-zND"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -421,7 +429,7 @@
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="T8g-bc-DnK"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="qwF-sd-chE"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -431,7 +439,7 @@
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="Yfg-3c-brQ"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="uqd-G3-dPV"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -718,7 +726,7 @@
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="dlY-lT-ywq"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="nso-xg-7mH"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -728,7 +736,7 @@
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="JJ5-S3-JyB"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="efd-hy-Zhr"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -738,7 +746,7 @@
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="L4a-8G-AjA"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="pg7-b6-afb"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -748,7 +756,7 @@
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="2uD-BP-Tkv"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="4xH-o3-Lae"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFUIText-RegularG1" family="SF UI  Text" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
