@@ -28,8 +28,6 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
             self.tableView.reloadData()
         }
         
-        dump(NetworkManager.trendingMovies)
-        
         setupBarButtonMenu()
     }
     
@@ -88,6 +86,8 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
                 self.tableView.reloadData()
             })
         ])
+        
+        
         
         navigationItem.rightBarButtonItem?.menu = barButtonMenu
     }

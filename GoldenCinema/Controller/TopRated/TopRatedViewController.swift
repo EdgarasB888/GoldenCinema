@@ -19,6 +19,8 @@ class TopRatedViewController: UIViewController, UISearchBarDelegate
 {
     @IBOutlet weak var tableView: UITableView!
     
+    let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width:(UIScreen.main.bounds.width), height: 70))
+    
     var topMovies: [TopMovieInfo] = []
     var filteredTopMovies = [TopMovieInfo]()
     
@@ -87,25 +89,21 @@ class TopRatedViewController: UIViewController, UISearchBarDelegate
     
     func setupSearchBar()
     {
-        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width:(UIScreen.main.bounds.width), height: 70))
-    
         searchBar.showsScopeBar = true
         searchBar.scopeButtonTitles = ["Title", "Release Date", "Vote Average"]
         searchBar.selectedScopeButtonIndex = 0
-        searchBar.showsCancelButton = true
+        searchBar.tintColor = UIColor(named: "NavigationColor")
         
         // User Interface is Dark
         if self.traitCollection.userInterfaceStyle == .dark
         {
             searchBar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-            searchBar.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
             searchBar.barTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         }
         // User Interface is Light
         else
         {
             searchBar.backgroundColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
-            searchBar.tintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
             searchBar.barTintColor = UIColor(red: 241/255, green: 202/255, blue: 137/255, alpha: 1)
         }
         
@@ -113,6 +111,16 @@ class TopRatedViewController: UIViewController, UISearchBarDelegate
         
         searchBar.delegate = self
         self.tableView.tableHeaderView = searchBar
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
+    {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
+        searchBar.endEditing(true)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
